@@ -1,6 +1,6 @@
 <?php
 
-namespace Mabrouk\Permission\Console\Commands;
+namespace Otas\Permission\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -56,7 +56,7 @@ class PermissionPublishRoutesCommand extends Command
         );
 
         $this->callSilent('vendor:publish', [
-            '--provider' => 'Mabrouk\Permission\PermissionServiceProvider',
+            '--provider' => 'Otas\Permission\PermissionServiceProvider',
         ]);
 
         exec('composer dump-autoload');

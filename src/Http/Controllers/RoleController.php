@@ -1,13 +1,13 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Controllers;
+namespace Otas\Permission\Http\Controllers;
 
-use Mabrouk\Permission\Models\Role;
-use Mabrouk\Permission\Filters\RoleFilter;
-use Mabrouk\Permission\Http\Resources\RoleResource;
-use Mabrouk\Permission\Http\Requests\RoleStoreRequest;
-use Mabrouk\Permission\Http\Requests\RoleUpdateRequest;
-use Mabrouk\Permission\Http\Resources\RoleSimpleResource;
+use Otas\Permission\Models\Role;
+use Otas\Permission\Filters\RoleFilter;
+use Otas\Permission\Http\Resources\RoleResource;
+use Otas\Permission\Http\Requests\RoleStoreRequest;
+use Otas\Permission\Http\Requests\RoleUpdateRequest;
+use Otas\Permission\Http\Resources\RoleSimpleResource;
 
 class RoleController extends Controller
 {
@@ -37,7 +37,7 @@ class RoleController extends Controller
         $role = $request->storeRole();
 
         return response([
-            'message' => __('mabrouk/permission/roles.store'),
+            'message' => __('otas/permission/roles.store'),
             'role' => new RoleResource($role),
         ]);
     }
@@ -62,7 +62,7 @@ class RoleController extends Controller
         $role = $request->updateRole();
 
         return response([
-            'message' => __('mabrouk/permission/roles.update'),
+            'message' => __('otas/permission/roles.update'),
             'role' => new RoleResource($role),
         ]);
     }

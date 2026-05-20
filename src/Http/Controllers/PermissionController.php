@@ -1,10 +1,10 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Controllers;
+namespace Otas\Permission\Http\Controllers;
 
-use Mabrouk\Permission\Models\Permission;
-use Mabrouk\Permission\Http\Resources\PermissionResource;
-use Mabrouk\Permission\Http\Requests\PermissionUpdateRequest;
+use Otas\Permission\Models\Permission;
+use Otas\Permission\Http\Resources\PermissionResource;
+use Otas\Permission\Http\Requests\PermissionUpdateRequest;
 
 class PermissionController extends Controller
 {
@@ -43,7 +43,7 @@ class PermissionController extends Controller
     {
         $permission = $request->updatePermission();
         return response([
-            'message' => __('mabrouk/permission/permissions.update'),
+            'message' => __('otas/permission/permissions.update'),
             'permission' => new PermissionResource($permission),
         ]);
     }

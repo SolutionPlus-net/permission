@@ -1,8 +1,8 @@
 <?php
 
-namespace Mabrouk\Permission\Tests;
+namespace Otas\Permission\Tests;
 
-use Mabrouk\Permission\PermissionServiceProvider;
+use Otas\Permission\PermissionServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

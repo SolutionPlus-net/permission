@@ -1,11 +1,11 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Controllers;
+namespace Otas\Permission\Http\Controllers;
 
-use Mabrouk\Permission\Models\PermissionGroup;
-use Mabrouk\Permission\Http\Resources\PermissionGroupResource;
-use Mabrouk\Permission\Http\Requests\PermissionGroupStoreRequest;
-use Mabrouk\Permission\Http\Requests\PermissionGroupUpdateRequest;
+use Otas\Permission\Models\PermissionGroup;
+use Otas\Permission\Http\Resources\PermissionGroupResource;
+use Otas\Permission\Http\Requests\PermissionGroupStoreRequest;
+use Otas\Permission\Http\Requests\PermissionGroupUpdateRequest;
 
 class PermissionGroupController extends Controller
 {
@@ -35,7 +35,7 @@ class PermissionGroupController extends Controller
         $permissionGroup = $request->storePermissionGroup();
 
         return response([
-            'message' => __('mabrouk/permission/permission_groups.store'),
+            'message' => __('otas/permission/permission_groups.store'),
             'permission_group' => new PermissionGroupResource($permissionGroup),
         ]);
     }
@@ -60,7 +60,7 @@ class PermissionGroupController extends Controller
         $permissionGroup = $request->updatePermissionGroup();
 
         return response([
-            'message' => __('mabrouk/permission/permission_groups.update'),
+            'message' => __('otas/permission/permission_groups.update'),
             'permission_group' => new PermissionGroupResource($permissionGroup),
         ]);
     }
@@ -73,13 +73,13 @@ class PermissionGroupController extends Controller
     {
         if ($permissionGroup->permissions()->count() > 0) {
             return response([
-                'message' => __('mabrouk/permission/permission_groups.cant_destroy'),
+                'message' => __('otas/permission/permission_groups.cant_destroy'),
             ], 409);
         }
 
         $permissionGroup->deleteTranslations()->delete();
         return response([
-            'message' => __('mabrouk/permission/permission_groups.destroy'),
+            'message' => __('otas/permission/permission_groups.destroy'),
         ]);
     }
 }

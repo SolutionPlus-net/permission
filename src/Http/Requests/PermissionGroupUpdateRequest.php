@@ -1,13 +1,13 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Requests;
+namespace Otas\Permission\Http\Requests;
 
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
-use Mabrouk\Permission\Models\Permission;
+use Otas\Permission\Models\Permission;
 use Illuminate\Foundation\Http\FormRequest;
-use Mabrouk\Permission\Models\PermissionGroup;
-use Mabrouk\Translatable\Rules\UniqueForLocale;
+use Otas\Permission\Models\PermissionGroup;
+use Otas\Translatable\Rules\UniqueForLocale;
 
 class PermissionGroupUpdateRequest extends FormRequest
 {
@@ -48,7 +48,7 @@ class PermissionGroupUpdateRequest extends FormRequest
     public function updatePermissionGroup(): PermissionGroup
     {
         $currentTranslationNamespace = config('translatable.translation_models_path');
-        config(['translatable.translation_models_path' => 'Mabrouk\Permission\Models']);
+        config(['translatable.translation_models_path' => 'Otas\Permission\Models']);
         DB::transaction(function () {
             if ($this->exists('name')) {
                 $this->permission_group->update([]);
@@ -76,9 +76,9 @@ class PermissionGroupUpdateRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => __('mabrouk/permission/permission_groups.attributes.name'),
-            'permissions' => __('mabrouk/permission/permission_groups.attributes.permissions'),
-            'permissions.*' => __('mabrouk/permission/permission_groups.attributes.permission'),
+            'name' => __('otas/permission/permission_groups.attributes.name'),
+            'permissions' => __('otas/permission/permission_groups.attributes.permissions'),
+            'permissions.*' => __('otas/permission/permission_groups.attributes.permission'),
         ];
     }
 }

@@ -1,14 +1,14 @@
 <?php
 
-namespace Mabrouk\Permission\Models;
+namespace Otas\Permission\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Mabrouk\Filterable\Traits\Filterable;
-use Mabrouk\Translatable\Traits\Translatable;
+use Otas\Filterable\Traits\Filterable;
+use Otas\Translatable\Traits\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Role extends Model
@@ -118,15 +118,15 @@ class Role extends Model
     public function remove(): self
     {
         $response = [];
-        $response['message'] = __('mabrouk/permission/roles.destroy');
+        $response['message'] = __('otas/permission/roles.destroy');
         $response['response_code'] = 200;
         switch (true) {
             case $this->id == 0:
-                $response['message'] = __('mabrouk/permission/roles.cant_destroy_super_admin_role');
+                $response['message'] = __('otas/permission/roles.cant_destroy_super_admin_role');
                 $response['response_code'] = 409;
                 break;
             case (bool) $this->users()->count() :
-                $response['message'] = __('mabrouk/permission/roles.cant_destroy');
+                $response['message'] = __('otas/permission/roles.cant_destroy');
                 $response['response_code'] = 409;
             break;
         }

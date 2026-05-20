@@ -1,9 +1,9 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Requests;
+namespace Otas\Permission\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Mabrouk\Permission\Models\PermissionGroup;
+use Otas\Permission\Models\PermissionGroup;
 
 class PermissionGroupStoreRequest extends FormRequest
 {
@@ -32,7 +32,7 @@ class PermissionGroupStoreRequest extends FormRequest
     public function storePermissionGroup(): PermissionGroup
     {
         $currentTranslationNamespace = config('translatable.translation_models_path');
-        config(['translatable.translation_models_path' => 'Mabrouk\Permission\Models']);
+        config(['translatable.translation_models_path' => 'Otas\Permission\Models']);
         $this->permissionGroup = PermissionGroup::create([]);
         config(['translatable.translation_models_path' => $currentTranslationNamespace]);
 
@@ -42,7 +42,7 @@ class PermissionGroupStoreRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => __('mabrouk/permission/permission_groups.attributes.name'),
+            'name' => __('otas/permission/permission_groups.attributes.name'),
         ];
     }
 }

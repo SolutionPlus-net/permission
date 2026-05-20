@@ -1,8 +1,8 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Requests;
+namespace Otas\Permission\Http\Requests;
 
-use Mabrouk\Permission\Models\Role;
+use Otas\Permission\Models\Role;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RoleStoreRequest extends FormRequest
@@ -33,7 +33,7 @@ class RoleStoreRequest extends FormRequest
     public function storeRole(): Role
     {
         $currentTranslationNamespace = config('translatable.translation_models_path');
-        config(['translatable.translation_models_path' => 'Mabrouk\Permission\Models']);
+        config(['translatable.translation_models_path' => 'Otas\Permission\Models']);
         $this->role = Role::create([]);
         config(['translatable.translation_models_path' => $currentTranslationNamespace]);
 
@@ -43,8 +43,8 @@ class RoleStoreRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => __('mabrouk/permission/roles.attributes.name'),
-            'description' => __('mabrouk/permission/roles.attributes.description'),
+            'name' => __('otas/permission/roles.attributes.name'),
+            'description' => __('otas/permission/roles.attributes.description'),
         ];
     }
 }

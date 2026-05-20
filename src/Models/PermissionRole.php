@@ -1,6 +1,6 @@
 <?php
 
-namespace Mabrouk\Permission\Models;
+namespace Otas\Permission\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;

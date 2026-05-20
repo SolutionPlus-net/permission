@@ -1,9 +1,9 @@
 <?php
 
-namespace Mabrouk\Permission\Models;
+namespace Otas\Permission\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Mabrouk\Translatable\Traits\Translatable;
+use Otas\Translatable\Traits\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 

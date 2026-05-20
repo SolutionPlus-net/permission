@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Mabrouk\Permission\Models\Role;
-use Mabrouk\Permission\Models\Permission;
-use Mabrouk\Permission\Models\RoleTranslation;
+use Otas\Permission\Models\Role;
+use Otas\Permission\Models\Permission;
+use Otas\Permission\Models\RoleTranslation;
 
 class RolesTableSeeder extends Seeder
 {

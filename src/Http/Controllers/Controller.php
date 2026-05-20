@@ -1,6 +1,6 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Controllers;
+namespace Otas\Permission\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

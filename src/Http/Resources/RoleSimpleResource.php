@@ -1,6 +1,6 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Resources;
+namespace Otas\Permission\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

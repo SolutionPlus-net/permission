@@ -1,12 +1,12 @@
 <?php
 
-namespace Mabrouk\Permission\Traits;
+namespace Otas\Permission\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Cache;
-use Mabrouk\Permission\Models\Role;
-use Mabrouk\Permission\Models\Permission;
-use Mabrouk\Permission\Models\SubPermission;
+use Otas\Permission\Models\Role;
+use Otas\Permission\Models\Permission;
+use Otas\Permission\Models\SubPermission;
 
 Trait HasPermission
 {
