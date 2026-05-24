@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Mabrouk\Permission\Helpers\RouteInvestigator;
+use Otas\Permission\Helpers\RouteInvestigator;
 
 class PermissionsTableSeeder extends Seeder
 {

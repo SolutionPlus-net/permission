@@ -1,6 +1,6 @@
-# Mabrouk/Permission
+# Otas/Permission
 
-mabrouk/permission is a Laravel api package for dealing with project admins permissions using Database approach.
+otas/permission is a Laravel api package for dealing with project admins permissions using Database approach.
 
 ## Table of Content
 [Important Introduction](#important-introduction)
@@ -49,7 +49,7 @@ In order to get the most benefit of this package results, try to follow the stan
 You can install the package using composer.
 
 ```bash
-composer install mabrouk/permission
+composer install otas/permission
 ```
 
 In order to get things work, add the ```PermissionOfficerMiddleware``` at the end of the ```$routeMiddleware``` property of ```app/Http/Kernel.php``` class
@@ -57,7 +57,7 @@ In order to get things work, add the ```PermissionOfficerMiddleware``` at the en
 ```php
     protected $routeMiddleware = [
         // ...
-        'permission-officer' => \Mabrouk\Permission\Http\Middleware\PermissionOfficerMiddleware::class,
+        'permission-officer' => \Otas\Permission\Http\Middleware\PermissionOfficerMiddleware::class,
     ];
 ```
 
@@ -101,13 +101,13 @@ php artisan config:cache
 
 ## Using `HasPermission` Trait on desired models
 
-Now you need to add ```Mabrouk\Permission\Traits\HasPermission.php``` trait on models which will have roles such as "User" model for example. Don't forget to add this trait to all models you specified in ```permission.php``` config file under the key ```roleable_models``` and don't forget to carefully read the instructions included in config file.
+Now you need to add ```Otas\Permission\Traits\HasPermission.php``` trait on models which will have roles such as "User" model for example. Don't forget to add this trait to all models you specified in ```permission.php``` config file under the key ```roleable_models``` and don't forget to carefully read the instructions included in config file.
 
 * You are all done with installation and structure. Now we need just to understand how to use it.
 
 ## Out of the box methods and attributes
 
-After using ```Mabrouk\Permission\Traits\HasPermission.php``` trait on specified models in ```permissions.php``` config file as mentioned above you will have additional methods and attributes on specified models. let's take User model as example and see methods usage such as the following:
+After using ```Otas\Permission\Traits\HasPermission.php``` trait on specified models in ```permissions.php``` config file as mentioned above you will have additional methods and attributes on specified models. let's take User model as example and see methods usage such as the following:
 
 ### Methods
 
@@ -128,7 +128,7 @@ Put in mind that it's a polymorphic relationship so to get reversed relation ```
 
 - ```User::HasPermissions($permissionsIds)``` This is a query scope method in order to filter users whom have specific permissions and you can fetch the result as usual as using ```->get()```, ```->first()``` or any other method as used to use.
 
-> note here that User model is used just as example and you can use the same functionality with any specified models in ```permissions.php``` config file after applying ```Mabrouk\Permission\Traits\HasPermission.php``` trait on it.
+> note here that User model is used just as example and you can use the same functionality with any specified models in ```permissions.php``` config file after applying ```Otas\Permission\Traits\HasPermission.php``` trait on it.
 
 ### Attributes
 
@@ -189,7 +189,7 @@ php artisan permission:seed
 ```php
 <?php
 
-namespace Mabrouk\Permission\Http\Resources;
+namespace Otas\Permission\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -217,7 +217,7 @@ class PermissionGroupResource extends JsonResource
 ```php
 <?php
 
-namespace Mabrouk\Permission\Http\Resources;
+namespace Otas\Permission\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -244,7 +244,7 @@ class PermissionGroupSimpleResource extends JsonResource
 ```php
 <?php
 
-namespace Mabrouk\Permission\Http\Resources;
+namespace Otas\Permission\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -274,7 +274,7 @@ class PermissionResource extends JsonResource
 ```php
 <?php
 
-namespace Mabrouk\Permission\Http\Resources;
+namespace Otas\Permission\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -302,9 +302,9 @@ class SubPermissionResource extends JsonResource
 ```php
 <?php
 
-namespace Mabrouk\Permission\Http\Resources;
+namespace Otas\Permission\Http\Resources;
 
-use Mabrouk\Permission\Models\PermissionGroup;
+use Otas\Permission\Models\PermissionGroup;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class RoleResource extends JsonResource
@@ -331,7 +331,7 @@ class RoleResource extends JsonResource
 ```php
 <?php
 
-namespace Mabrouk\Permission\Http\Resources;
+namespace Otas\Permission\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -355,7 +355,7 @@ class RoleSimpleResource extends JsonResource
 ```
 
 ## Any thing else?
-Actually one more thing to know is that this package depend on [mabrouk/translatable](https://github.com/ah-mabrouk/Translatable) package in order to handle translation dynamically for any chosen language.
+Actually one more thing to know is that this package depend on [otas/translatable](https://github.com/SolutionPlus-net/Translatable) package in order to handle translation dynamically for any chosen language.
 
 > You will need to pass additional input "locale" in update requests of mentioned models and need to create roles and permission groups with your application default language.
 To get role/permission/permission group name or description with desired language you need to pass additional header to your requests "X-locale"
@@ -364,4 +364,4 @@ To get role/permission/permission group name or description with desired languag
 
 ## License
 
-Mabrouk/Permission package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Otas/Permission package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

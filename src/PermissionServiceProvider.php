@@ -1,15 +1,15 @@
 <?php
 
-namespace Mabrouk\Permission;
+namespace Otas\Permission;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Mabrouk\Permission\Console\Commands\PermissionPublishRoutesCommand;
-use Mabrouk\Permission\Console\Commands\PermissionSeedCommand;
-use Mabrouk\Permission\Console\Commands\PermissionSetupCommand;
-use Mabrouk\Permission\Http\Middleware\PermissionOfficerMiddleware;
+use Otas\Permission\Console\Commands\PermissionPublishRoutesCommand;
+use Otas\Permission\Console\Commands\PermissionSeedCommand;
+use Otas\Permission\Console\Commands\PermissionSetupCommand;
+use Otas\Permission\Http\Middleware\PermissionOfficerMiddleware;
 
 class PermissionServiceProvider extends ServiceProvider
 {

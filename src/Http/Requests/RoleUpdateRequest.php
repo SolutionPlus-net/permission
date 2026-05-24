@@ -1,11 +1,11 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Requests;
+namespace Otas\Permission\Http\Requests;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Http\FormRequest;
-use Mabrouk\Permission\Models\Role;
-use Mabrouk\Translatable\Rules\UniqueForLocale;
+use Otas\Permission\Models\Role;
+use Otas\Translatable\Rules\UniqueForLocale;
 
 class RoleUpdateRequest extends FormRequest
 {
@@ -49,7 +49,7 @@ class RoleUpdateRequest extends FormRequest
     public function updateRole(): Role
     {
         $currentTranslationNamespace = config('translatable.translation_models_path');
-        config(['translatable.translation_models_path' => 'Mabrouk\Permission\Models']);
+        config(['translatable.translation_models_path' => 'Otas\Permission\Models']);
         DB::transaction(function () {
             $this->role->update([]);
             $this->updatePermissions();
@@ -77,12 +77,12 @@ class RoleUpdateRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => __('mabrouk/permission/roles.attributes.name'),
-            'description' => __('mabrouk/permission/roles.attributes.description'),
-            'permissions' => __('mabrouk/permission/roles.attributes.permissions'),
-            'permissions.*.id' => __('mabrouk/permission/roles.attributes.permission'),
-            'permissions.*.sub_permissions' => __('mabrouk/permission/roles.attributes.sub_permissions'),
-            'permissions.*.sub_permissions.*' => __('mabrouk/permission/roles.attributes.sub_permission'),
+            'name' => __('otas/permission/roles.attributes.name'),
+            'description' => __('otas/permission/roles.attributes.description'),
+            'permissions' => __('otas/permission/roles.attributes.permissions'),
+            'permissions.*.id' => __('otas/permission/roles.attributes.permission'),
+            'permissions.*.sub_permissions' => __('otas/permission/roles.attributes.sub_permissions'),
+            'permissions.*.sub_permissions.*' => __('otas/permission/roles.attributes.sub_permission'),
         ];
     }
 }

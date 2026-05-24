@@ -1,5 +1,5 @@
 {
-    "name": "mabrouk/permission",
+    "name": "otas/permission",
     "description": "a laravel package to handle dealing with permissions in custom groups",
     "type": "library",
     "license": "MIT",
@@ -12,22 +12,22 @@
     "minimum-stability": "dev",
     "require": {
         "laravel/framework": ">=9",
-        "mabrouk/translatable": ">=1",
-        "mabrouk/filterable": ">=1"
+        "otas/translatable": ">=1",
+        "otas/filterable": ">=1"
     },
     "require-dev": {
-        "orchestra/testbench": "^7.0@dev"
+        "orchestra/testbench": "^9.0@dev"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Mabrouk\\Permission\\PermissionServiceProvider"
+                "Otas\\Permission\\PermissionServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Mabrouk\\Permission\\": "src/",
+            "Otas\\Permission\\": "src/",
             "Database\\Factories\\": "src/database/factories/",
             "Database\\Seeders\\": "src/database/seeders/"
         }

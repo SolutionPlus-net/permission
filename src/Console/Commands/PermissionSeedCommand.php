@@ -1,6 +1,6 @@
 <?php
 
-namespace Mabrouk\Permission\Console\Commands;
+namespace Otas\Permission\Console\Commands;
 
 use Illuminate\Console\Command;
 use Database\Seeders\RoleableSeeder;
@@ -42,7 +42,7 @@ class PermissionSeedCommand extends Command
 
         $currentTranslationNamespace = config('translatable.translation_models_path');
 
-        config(['translatable.translation_models_path' => 'Mabrouk\Permission\Models']);
+        config(['translatable.translation_models_path' => 'Otas\Permission\Models']);
 
         $seedOptions = ['--class' => RoleableSeeder::class];
 

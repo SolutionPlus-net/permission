@@ -1,6 +1,6 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Middleware;
+namespace Otas\Permission\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Str;

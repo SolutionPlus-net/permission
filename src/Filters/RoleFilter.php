@@ -1,8 +1,8 @@
 <?php
 
-namespace Mabrouk\Permission\Filters;
+namespace Otas\Permission\Filters;
 
-use Mabrouk\Filterable\Helpers\QueryFilter;
+use Otas\Filterable\Helpers\QueryFilter;
 
 class RoleFilter extends QueryFilter
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mabrouk\Permission\Console\Commands;
+namespace Otas\Permission\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -19,7 +19,7 @@ class PermissionSetupCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Install and Publish Mabrouk Permission Package';
+    protected $description = 'Install and Publish Otas Permission Package';
 
     /**
      * Create a new command instance.
@@ -74,13 +74,13 @@ class PermissionSetupCommand extends Command
     private function publishConfiguration($forcePublish = false)
     {
         $params = [
-            '--provider' => 'Mabrouk\Permission\PermissionServiceProvider',
+            '--provider' => 'Otas\Permission\PermissionServiceProvider',
         ];
 
         if ($forcePublish === true) {
             $params['--force'] = true;
         }
 
-       $this->call('vendor:publish', $params);
+        $this->call('vendor:publish', $params);
     }
 }

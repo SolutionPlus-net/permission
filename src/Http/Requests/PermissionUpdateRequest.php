@@ -1,10 +1,10 @@
 <?php
 
-namespace Mabrouk\Permission\Http\Requests;
+namespace Otas\Permission\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Mabrouk\Permission\Models\Permission;
-use Mabrouk\Translatable\Rules\UniqueForLocale;
+use Otas\Permission\Models\Permission;
+use Otas\Translatable\Rules\UniqueForLocale;
 
 class PermissionUpdateRequest extends FormRequest
 {
@@ -48,7 +48,7 @@ class PermissionUpdateRequest extends FormRequest
     public function updatePermission(): Permission
     {
         $currentTranslationNamespace = config('translatable.translation_models_path');
-        config(['translatable.translation_models_path' => 'Mabrouk\Permission\Models']);
+        config(['translatable.translation_models_path' => 'Otas\Permission\Models']);
         request()->permission->update([]);
         config(['translatable.translation_models_path' => $currentTranslationNamespace]);
 
@@ -58,8 +58,8 @@ class PermissionUpdateRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => __('mabrouk/permission/permissions.attributes.name'),
-            'description' => __('mabrouk/permission/permissions.attributes.description'),
+            'name' => __('otas/permission/permissions.attributes.name'),
+            'description' => __('otas/permission/permissions.attributes.description'),
         ];
     }
 }

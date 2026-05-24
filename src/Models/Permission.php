@@ -1,10 +1,10 @@
 <?php
 
-namespace Mabrouk\Permission\Models;
+namespace Otas\Permission\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Mabrouk\Translatable\Traits\Translatable;
+use Otas\Translatable\Traits\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -63,7 +63,7 @@ class Permission extends Model
 
     public function getCustomDisplayNameAttribute()
     {
-        return __('mabrouk/permission/permissions.custom_display_name.' . $this->name);
+        return __('otas/permission/permissions.custom_display_name.' . $this->name);
     }
 
     ## Query Scope Methods
