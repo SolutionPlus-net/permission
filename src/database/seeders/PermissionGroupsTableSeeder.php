@@ -24,9 +24,18 @@ class PermissionGroupsTableSeeder extends Seeder
 
         foreach ($permissionGroups['en'] as $index => $name) {
             if (!\in_array($name, $currentPermissionGroupsInTable)) {
-                $permissionGroup = PermissionGroup::create([])->translate(['name' => $name], 'en');
+                $permissionGroup = PermissionGroup::create([]);
+
+                $permissionGroup->translations()->create([
+                    'name' => $name,
+                    'locale' => 'en',
+                ]);
+
                 if (isset($permissionGroups['ar'][$index])) {
-                    $permissionGroup->translate(['name' => $permissionGroups['ar'][$index]], 'ar');
+                    $permissionGroup->translations()->create([
+                        'name' => $permissionGroups['ar'][$index],
+                        'locale' => 'ar',
+                    ]);
                 }
             }
         }

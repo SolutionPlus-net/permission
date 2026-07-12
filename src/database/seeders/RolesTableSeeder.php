@@ -40,14 +40,16 @@ class RolesTableSeeder extends Seeder
                     $role->update(['id' => 0]);
                 }
     
-                $role->refresh()->translate([
+                $role->translations()->translate([
                     'name' => $roles[$i]['name'],
-                ], 'en');
+                    'locale' => 'en'
+                ]);
 
                 if (\array_key_exists('ar_name', $roles[$i])) {
-                    $role->translate([
+                    $role->translations()->create([
                         'name' => $roles[$i]['ar_name'],
-                    ], 'ar');
+                        'locale' => 'ar'
+                    ]);
                 }
             }
         }

@@ -24,7 +24,7 @@ class SubPermissionsTableSeeder extends Seeder
                     'name' => $subPermission['name'],
                 ])->translate([
                     'display_name' => $subPermission['display_name'],
-                ]);
+                ], config('translatable.fallback_locale'));
             });
         });
     }
