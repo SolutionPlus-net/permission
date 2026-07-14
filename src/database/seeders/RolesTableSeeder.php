@@ -40,7 +40,7 @@ class RolesTableSeeder extends Seeder
                     $role->update(['id' => 0]);
                 }
     
-                $role->translations()->translate([
+                $role->translations()->create([
                     'name' => $roles[$i]['name'],
                     'locale' => 'en'
                 ]);
